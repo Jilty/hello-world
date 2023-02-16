@@ -53,7 +53,7 @@
 							<!-- <api.id>${api.id}</api.id> -->
 						</properties>
 					</cloudHubDeployment>
-				</configurtion>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
