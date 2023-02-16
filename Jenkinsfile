@@ -20,8 +20,7 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
    steps{
 script{
   LAST_STARTED = env.STAGE_NAME
-sh 'mvn --version'
-  
+sh 'mvn --version'  
 }
   }
   }
