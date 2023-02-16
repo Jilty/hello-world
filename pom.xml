@@ -33,23 +33,23 @@
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 						<server>cloudhub</server>
-						<environment>${ap.environment}</environment>
+						<environment>dev.in</environment>
 						<region>us-east-2</region>
-						<muleVersion>${app.runtime.server}</muleVersion>
+						<muleVersion>4.4.0</muleVersion>
 						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
-						<workers>${workers}</workers>
-						<workerType>${workerType}</workerType>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<applicationName>${deployment.name}</applicationName>
+						<applicationName>hello-world-dev-in</applicationName>
 						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
 						    <http.port>8082</http.port>
-							<project.version>${project.version}</project.version>
-							<mule.env>${deployment.env}</mule.env>
-							<secure.key>${secure.key}</secure.key>
-							<anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+							<project.version>1.0.0</project.version>
+							<mule.env>dev-in</mule.env>
+							<secure.key>mule</secure.key>
+							<anypoint.platform.client_id>8c0ff4f9c24149269e6160339bd985b5</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>b6410B746D2647768747CA4c17eE64D3</anypoint.platform.client_secret>
 							<!-- <api.id>${api.id}</api.id> -->
 						</properties>
 					</cloudHubDeployment>
