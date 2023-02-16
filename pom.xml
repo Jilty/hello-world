@@ -33,7 +33,7 @@
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 						<server>cloudhub</server>
-						<environment>dev.in</environment>
+						<environment>dev-in</environment>
 						<region>us-east-2</region>
 						<muleVersion>4.4.0</muleVersion>
 						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
