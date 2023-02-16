@@ -29,6 +29,31 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+						<server>cloudhub</server>
+						<environment>${ap.environment}</environment>
+						<region>us-east-2</region>
+						<muleVersion>${app.runtime.server}</muleVersion>
+						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<applicationName>${deployment.name}</applicationName>
+						<businessGroup>${anypoint.businessGroup}</businessGroup>
+						<deploymentTimeout>600000</deploymentTimeout>
+						<properties>
+						    <http.port>8082</http.port>
+							<project.version>${project.version}</project.version>
+							<mule.env>${deployment.env}</mule.env>
+							<secure.key>${secure.key}</secure.key>
+							<anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+							<!-- <api.id>${api.id}</api.id> -->
+						</properties>
+					</cloudHubDeployment>
+				</configurtion>
 			</plugin>
 		</plugins>
 	</build>
