@@ -21,7 +21,7 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
 script{
   LAST_STARTED = env.STAGE_NAME
 sh 'mvn --version'
-  }
+  
 }
   }
   }
