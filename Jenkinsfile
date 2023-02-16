@@ -15,6 +15,17 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
 }
   }
   }
+  
+   stage('Build Application'){
+   steps{
+script{
+  LAST_STARTED = env.STAGE_NAME
+sh 'mvn --version'
+  }
+}
+  }
+  }
+
 
 
 // stage('Munit & Functional Testing'){
