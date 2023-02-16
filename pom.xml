@@ -13,7 +13,7 @@
 
 	<properties>
 		<munit.version>2.1.2</munit.version>
-		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.8.1</mule.maven.plugin.version>
 	</properties>
 
 	<build>
