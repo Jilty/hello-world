@@ -37,7 +37,6 @@
 						<muleVersion>${app.runtime.server}</muleVersion>
 						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
 						<workers>${workers}</workers>
-						<workerType>${workerType}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<applicationName>${deployment.name}</applicationName>
 						<businessGroup>${anypoint.businessGroup}</businessGroup>
