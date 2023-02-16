@@ -15,6 +15,8 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
 }
   }
   }
+  
+
 
 
 // stage('Munit & Functional Testing'){
