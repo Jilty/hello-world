@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
+	<modelVersion>4.0.0</modelVersion>	
 	<parent>
         <groupId>06100531-600c-494c-91cc-7f7c373b1144</groupId>
         <artifactId>parent-pom</artifactId>
         <version>1.0.0-BSFI-TEST</version>
         <relativePath/>
     </parent> 
-
 	<groupId>com.mycompany</groupId>
 	<artifactId>hello-world</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
