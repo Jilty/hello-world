@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+        <groupId>06100531-600c-494c-91cc-7f7c373b1144</groupId>
+        <artifactId>parent-pom</artifactId>
+        <version>1.0.0-BSFI-TEST</version>
+        <relativePath/>
+    </parent> 
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>hello-world</artifactId>
@@ -13,8 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.4.0-20220824</app.runtime>
-		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
+		<app.runtime>4.4.0</app.runtime>
 	</properties>
 
 	<build>
@@ -28,6 +34,7 @@
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
+				
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
@@ -44,7 +51,7 @@
 						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
-						    <http.port>8082</http.port>
+							<http.port>8082</http.port>
 							<project.version>1.0.0</project.version>
 							<mule.env>dev-in</mule.env>
 							<secure.key>mule</secure.key>
