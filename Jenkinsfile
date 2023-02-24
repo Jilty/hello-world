@@ -25,8 +25,10 @@ pipeline
   stage('Vault'){
    steps{
 script{
- 
+    node(defaultNodeLabel()){
+
   sh 'mvn --version'
+    }
 }
   }
   }
