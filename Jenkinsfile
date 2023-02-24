@@ -8,6 +8,7 @@
 // ]]
 // def configuration =[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1]
 
+  def my-secret= "test"
 
 pipeline
 {
@@ -26,7 +27,6 @@ pipeline
 script{
  
 //    node(defaultNodeLabel()){
-    def my-secret= "test"
     sh 'echo $my-secret'
   // }
 }
