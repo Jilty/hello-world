@@ -1,14 +1,11 @@
-// def secrets =  [
-//  [ path: 'secrets/bfsi', 
-//  engineVersion: 1, 
-//  secretValues: [
-//   [  envVar: 'orgId', vaultKey: 'orgId'],
-//   [envVar: 'username', vaultKey: 'username']
-//  ]
-// ]]
-// def configuration =[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1]
+def secrets = [
+  [path: 'secrets/bfsi', engineVersion: 2, secretValues: [
+    [envVar: 'orgId', vaultKey: 'orgId'],
+    [envVar: 'username', vaultKey: 'username'],
+    [envVar: 'password', vaultKey: 'password']]],
+]
+def configuration = [vaultUrl: 'http://128.199.253.112:8200',  vaultCredentialId: 'vault-jenkins-role', engineVersion: 2]
 
-//   def my-secret= "test"
 
 pipeline
 {
@@ -26,11 +23,8 @@ pipeline
    steps{
 script{
 
- withVault([configuration:[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1], vaultSecrets: [[path: 'secrets/bfsi', engineVersion: 1, secretValues: [ [envVar: 'orgId', vaultKey: 'orgId'],[envVar: 'username', vaultKey: 'username']]]]]){
-
-     LAST_STARTED = env.STAGE_NAME
-     sh 'echo $orgId'
-       sh 'echo $username'
+ withVault([configuration: configuration, vaultSecrets: secrets]) {
+            sh "echo $orgId"
  } 
 }
   }
