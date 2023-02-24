@@ -27,7 +27,7 @@ pipeline
 script{
  
 //    node(defaultNodeLabel()){
-    sh 'echo $my-secret'
+  sh 'echo ${my-secret}'
   // }
 }
   }
