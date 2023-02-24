@@ -23,12 +23,33 @@ pipeline
   stage('Vault'){
    steps{
 script{
-//  withVault([configuration:[configuration: configuration, vaultSecrets: secrets){
-     withVault([configuration:[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1], vaultSecrets: [[path: 'secrets/bfsi', engineVersion: 1, secretValues: [ [envVar: 'orgId', vaultKey: 'orgId'],[envVar: 'username', vaultKey: 'username']]]]]){
+ 
+   node(defaultNodeLabel()){
+        println("TEST 1")
+        withCredentials([[
+            $class: 'VaultTokenCredentialBinding',
+            credentialsId: 'vault-jenkins-role',
+            vaultAddr: 'http://128.199.253.112:8200']]) {
+            sh 'vault kv get secrets/bfsi'
+        }
 
-  LAST_STARTED = env.STAGE_NAME
-     sh 'echo $orgId'
-       sh 'echo $username'
+        def secrets = [
+            [path: 'secrets/bfsi', secretValues: [
+                [vaultKey: 'orgId'],
+                [vaultKey: 'username']]]
+        ]
+        withVault([vaultSecrets: secrets]) {
+            println("TEST 2")
+            sh 'echo ${env.orgId}'
+            sh 'echo ${env.username}'
+        }
+    }
+//  withVault([configuration:[configuration: configuration, vaultSecrets: secrets){
+//      withVault([configuration:[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1], vaultSecrets: [[path: 'secrets/bfsi', engineVersion: 1, secretValues: [ [envVar: 'orgId', vaultKey: 'orgId'],[envVar: 'username', vaultKey: 'username']]]]]){
+
+//   LAST_STARTED = env.STAGE_NAME
+//      sh 'echo $orgId'
+//        sh 'echo $username'
   }
 }
   }
