@@ -1,14 +1,15 @@
 pipeline
 {
  agent any
- 	tools { nodejs "node" }
+ 	tools { nodejs "node" 
+        maven "maven"}
 
  stages{
  
   stage('Build Application'){
    steps{
 script{
-    configFileProvider([configFile(fileId: 'da01fc76-5c2b-4f0d-948a-c101b4cc4340', variable: 'settings')]){
+    configFileProvider([configFile(fileId: '16fec727-a2d6-47dd-94f6-35d0c5e82602', variable: 'settings')]){
   LAST_STARTED = env.STAGE_NAME
 sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
   }
@@ -22,7 +23,7 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
 // stage('Munit & Functional Testing'){
 //         steps {
 // script {
-// configFileProvider([configFile(fileId: 'da01fc76-5c2b-4f0d-948a-c101b4cc4340', variable: 'settings')]){
+// configFileProvider([configFile(fileId: '16fec727-a2d6-47dd-94f6-35d0c5e82602', variable: 'settings')]){
 // LAST_STARTED = env.STAGE_NAME
 // sh "mvn -f pom.xml -s $settings -Dhttp.port=8082 -Dproject.version=1.0.0 -Dsecure.key=mule -Dmule.env=dev -Dtestfile=src/test/javarunner.TestRunner.java test "
 // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/munit/coverage', reportFiles: 'summary.html', reportName: 'Munit coverage Report', reportTitles: ''])
@@ -39,7 +40,7 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
  
   stage('Deploy application to cloudHub'){
    steps{
-    configFileProvider([configFile(fileId: 'da01fc76-5c2b-4f0d-948a-c101b4cc4340', variable: 'settings')]){
+    configFileProvider([configFile(fileId: '16fec727-a2d6-47dd-94f6-35d0c5e82602', variable: 'settings')]){
   sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-dev-in -Dap.client_id=8c0ff4f9c24149269e6160339bd985b5  -Dap.client_secret=b6410B746D2647768747CA4c17eE64D3 -Dapp.runtime.server=4.4.0 -Ddeployment.env=dev-in  -Dsecure.key=mule -Dworkers=1 -DworkerType=null -Danypoint.businessGroup="NJC India"'
 
 
