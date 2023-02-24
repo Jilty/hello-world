@@ -7,18 +7,18 @@ pipeline
    }
 //  node {
 
- def secrets = [
-        [path: 'secrets/bfsi', engineVersion: 1, secretValues: [
-            [envVar: 'orgId', vaultKey: 'orgId'],
-            [envVar: 'username', vaultKey: 'username']]]
+//  def secrets = [
+//         [path: 'secrets/bfsi', engineVersion: 1, secretValues: [
+//             [envVar: 'orgId', vaultKey: 'orgId'],
+//             [envVar: 'username', vaultKey: 'username']]]
        
-    ]
+//     ]
 
-    // optional configuration, if you do not provide this the next higher configuration
-    // (e.g. folder or global) will be used
-    def configuration = [vaultUrl: 'http://128.199.253.112:8200',
-                         vaultCredentialId: 'vault-jenkins-role',
-                         engineVersion: 1]
+//     // optional configuration, if you do not provide this the next higher configuration
+//     // (e.g. folder or global) will be used
+//     def configuration = [vaultUrl: 'http://128.199.253.112:8200',
+//                          vaultCredentialId: 'vault-jenkins-role',
+//                          engineVersion: 1]
 //     // inside this block your credentials will be available as env variables
 //     withVault([configuration: configuration, vaultSecrets: secrets]) {
 //         sh 'echo $orgId'
@@ -32,7 +32,10 @@ pipeline
   stage('Vault'){
    steps{
 script{
-    withVault([configuration:$configuration, vaultSecrets: $secrets]){
+    withVault([configuration:[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1], vaultSecrets: [[path: 'secrets/bfsi', engineVersion: 1, secretValues: [ [envVar: 'orgId', vaultKey: 'orgId'],
+            [envVar: 'username', vaultKey: 'username']]]
+       
+    ]]){
   LAST_STARTED = env.STAGE_NAME
      sh 'echo $orgId'
        sh 'echo $username'
