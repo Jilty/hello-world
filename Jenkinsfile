@@ -26,12 +26,17 @@ pipeline
 script{
  
    node(defaultNodeLabel()){
-        withCredentials([[
+    def my-secret= "test"
+    sh 'echo $my-secret'
+     withCredentials([[
             $class: 'VaultTokenCredentialBinding',
             credentialsId: 'vault-jenkins-role',
             vaultAddr: 'http://128.199.253.112:8200']]) {
             sh 'vault kv get secrets/bfsi'
         }
+    
+        sh 'echo $my-secret'
+
 
         def secrets = [
             [path: 'secrets/bfsi', secretValues: [
