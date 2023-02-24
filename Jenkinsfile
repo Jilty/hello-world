@@ -32,7 +32,7 @@ pipeline
   stage('Vault'){
    steps{
 script{
-    withVault([configuration:configuration, vaultSecrets: secrets]){
+    withVault([configuration:$configuration, vaultSecrets: $secrets]){
   LAST_STARTED = env.STAGE_NAME
      sh 'echo $orgId'
        sh 'echo $username'
