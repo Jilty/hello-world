@@ -12,9 +12,10 @@
 pipeline
 {
  agent any
- 	tools { nodejs "node" 
-        maven "maven"
-        jdk "java1.8"
+ 	tools { 
+   nodejs "node" 
+   maven "maven"
+   jdk "java1.8"
    }
 
  stages{
@@ -25,7 +26,6 @@ pipeline
 script{
  
    node(defaultNodeLabel()){
-        println("TEST 1")
         withCredentials([[
             $class: 'VaultTokenCredentialBinding',
             credentialsId: 'vault-jenkins-role',
@@ -38,11 +38,10 @@ script{
                 [vaultKey: 'orgId'],
                 [vaultKey: 'username']]]
         ]
-        withVault([vaultSecrets: secrets]) {
-            println("TEST 2")
-            sh 'echo ${env.orgId}'
-            sh 'echo ${env.username}'
-        }
+//         withVault([vaultSecrets: secrets]) {
+//             sh 'echo ${env.orgId}'
+//             sh 'echo ${env.username}'
+//         }
     }
 //  withVault([configuration:[configuration: configuration, vaultSecrets: secrets){
 //      withVault([configuration:[vaultUrl: 'http://128.199.253.112:8200',vaultCredentialId: 'vault-jenkins-role',engineVersion: 1], vaultSecrets: [[path: 'secrets/bfsi', engineVersion: 1, secretValues: [ [envVar: 'orgId', vaultKey: 'orgId'],[envVar: 'username', vaultKey: 'username']]]]]){
