@@ -22,14 +22,14 @@ pipeline
  stages{
   
   
-//   stage('Vault'){
-//    steps{
-// script{
+  stage('Vault'){
+   steps{
+script{
  
-//   sh 'echo ${my-secret}'
-// }
-//   }
-//   }
+  sh 'mvn --version'
+}
+  }
+  }
  
   stage('Build Application'){
    steps{
