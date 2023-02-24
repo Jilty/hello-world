@@ -5,6 +5,8 @@ pipeline
         maven "maven"
         jdk "java1.8"
    }
+ node {
+
  def secrets = [
         [path: 'secrets/bfsi', engineVersion: 1, secretValues: [
             [envVar: 'orgId', vaultKey: 'orgId'],
