@@ -5,7 +5,7 @@ pipeline
         maven "maven"
         jdk "java1.8"
    }
- node {
+//  node {
 
  def secrets = [
         [path: 'secrets/bfsi', engineVersion: 1, secretValues: [
@@ -19,14 +19,27 @@ pipeline
     def configuration = [vaultUrl: 'http://128.199.253.112:8200',
                          vaultCredentialId: 'vault-jenkins-role',
                          engineVersion: 1]
-    // inside this block your credentials will be available as env variables
-    withVault([configuration: configuration, vaultSecrets: secrets]) {
-        sh 'echo $orgId'
-        sh 'echo $username'
-    }
+//     // inside this block your credentials will be available as env variables
+//     withVault([configuration: configuration, vaultSecrets: secrets]) {
+//         sh 'echo $orgId'
+//         sh 'echo $username'
+//     }
 }
 
  stages{
+  
+  
+  stage('Vault'){
+   steps{
+script{
+    withVault([configuration:configuration, vaultSecrets: secrets]){
+  LAST_STARTED = env.STAGE_NAME
+     sh 'echo $orgId'
+       sh 'echo $username'
+  }
+}
+  }
+  }
  
   stage('Build Application'){
    steps{
