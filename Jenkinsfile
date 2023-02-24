@@ -22,16 +22,14 @@ pipeline
  stages{
   
   
-  stage('Vault'){
-   steps{
-script{
+//   stage('Vault'){
+//    steps{
+// script{
  
-//    node(defaultNodeLabel()){
-  sh 'echo ${my-secret}'
-  // }
-}
-  }
-  }
+//   sh 'echo ${my-secret}'
+// }
+//   }
+//   }
  
   stage('Build Application'){
    steps{
