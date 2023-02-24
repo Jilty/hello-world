@@ -25,10 +25,10 @@ pipeline
    steps{
 script{
  
-   node(defaultNodeLabel()){
+//    node(defaultNodeLabel()){
     def my-secret= "test"
     sh 'echo $my-secret'
-   }
+  // }
 }
   }
   }
