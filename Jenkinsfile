@@ -17,6 +17,17 @@ pipeline
    }
 
  stages{
+   
+    stage('Vault'){
+   steps{
+script{
+
+
+            sh "java --version"
+ 
+}
+  }
+  }
   
   
   stage('Vault'){
