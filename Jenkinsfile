@@ -23,7 +23,7 @@ pipeline
 script{
 
 
-            sh "java --version"
+            sh "java -version"
  
 }
   }
