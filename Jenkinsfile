@@ -18,7 +18,7 @@ pipeline
 
  stages{
    
-    stage('Vault'){
+    stage('jva'){
    steps{
 script{
 
