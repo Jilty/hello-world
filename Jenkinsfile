@@ -13,7 +13,7 @@ pipeline
  	tools { 
    nodejs "node" 
    maven "maven"
-   jdk "java1.8"
+   jdk "java8"
    }
 
  stages{
