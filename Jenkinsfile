@@ -16,24 +16,12 @@ pipeline
    jdk "java8"
    }
 
- stages{
+ stages{  
    
-    stage('jva'){
-   steps{
-script{
-
-
-            sh "java -version"
- 
-}
-  }
-  }
-  
   
   stage('Vault'){
    steps{
 script{
-
  withVault([configuration: configuration, vaultSecrets: secrets]) {
             sh "echo $orgId"
  } 
@@ -76,40 +64,12 @@ sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
   stage('Deploy application to cloudHub'){
    steps{
      scrtpt{
-//      System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400")
-
     configFileProvider([configFile(fileId: '16fec727-a2d6-47dd-94f6-35d0c5e82602', variable: 'settings')]){
       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-dev-in -Dap.client_id=8c0ff4f9c24149269e6160339bd985b5  -Dap.client_secret=b6410B746D2647768747CA4c17eE64D3 -Dapp.runtime.server=4.4.0 -Ddeployment.env=dev-in  -Dsecure.key=mule -Dworkers=1 -DworkerType=null -Danypoint.businessGroup="NJC India"'
-
     }
   }
    }
-  }
- 
- 
- 
- 
- 
-  // stage('Kill container') {
-  //     steps {
-  //       script {
-  //         LAST_STARTED = env.STAGE_NAME
-  //             sh 'docker rm -f apix'
-  //       }
-  //     }
-  //   }
- 
+  } 
  
   }
-
-// post {
-//         failure {
-//    script {
-
-// if (container_Up)  {
-// sh 'docker rm -f apix'
-// }
-//    }
-//         }
-//     }
  }
