@@ -40,21 +40,21 @@
 						<server>cloudhub</server>
 						<environment>dev-in</environment>
 						<region>us-east-2</region>
-						<muleVersion>4.4.0</muleVersion>
+						<muleVersion>${app.runtime.server}</muleVersion>
 						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<applicationName>hello-world-jilty-dev-in</applicationName>
-						<businessGroup>NJC India</businessGroup>
+						<applicationName>${applicationName}</applicationName>
+						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
-							<http.port>8082</http.port>
+							<http.port>${http.port}</http.port>
 							<project.version>1.0.0</project.version>
-							<mule.env>dev-in</mule.env>
-							<secure.key>mule</secure.key>
-							 <connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
-                <connectedAppClientSecret>08839154734143C4Bf594830ec8e05A8</connectedAppClientSecret>
+							<mule.env>${mule.env}</mule.env>
+							<secure.key>${secure.key}</secure.key>
+							 <connectedAppClientId>${ap.client_id}</connectedAppClientId>
+                <connectedAppClientSecret>${ap.client_secret}</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
                 <objectStoreV2>true</objectStoreV2>
 <!-- 							<anypoint.platform.client_id>8c0ff4f9c24149269e6160339bd985b5</anypoint.platform.client_id>
