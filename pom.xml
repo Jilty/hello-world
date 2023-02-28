@@ -44,6 +44,8 @@
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<applicationName>hello-world-jilty-2-dev-in</applicationName>
+						<objectStoreV2>true</objectStoreV2>
+
 						<businessGroup>NJC India</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
@@ -54,6 +56,8 @@
 							 <connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
                 <connectedAppClientSecret>08839154734143C4Bf594830ec8e05A8</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
+							                <objectStoreV2>true</objectStoreV2>
+
 
 						</properties>
 					</cloudHubDeployment>
