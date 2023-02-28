@@ -1,8 +1,8 @@
 def secrets = [
   [path: 'secrets/bfsi', engineVersion: 2, secretValues: [
     [envVar: 'orgId', vaultKey: 'orgId'],
-    [envVar: 'username', vaultKey: 'username'],
-    [envVar: 'password', vaultKey: 'password']]],
+    [envVar: 'conAppId', vaultKey: 'conAppId'],
+    [envVar: 'conAppSecret', vaultKey: 'conAppSecret']]],
 ]
 def configuration = [vaultUrl: 'http://128.199.253.112:8200',  vaultCredentialId: 'vault-jenkins-id', engineVersion: 2]
 
@@ -63,7 +63,7 @@ pipeline
    steps{
      script{
        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
-       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
+       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -DconnectedAppId=$conAppId -DconnectedAppSecret=$conAppSecret -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
        }
      }
    }
