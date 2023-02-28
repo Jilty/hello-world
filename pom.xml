@@ -53,8 +53,8 @@
 							<project.version>1.0.0</project.version>
 							<mule.env>dev-in</mule.env>
 							<secure.key>mule</secure.key>
-							 <connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
-                <connectedAppClientSecret>08839154734143C4Bf594830ec8e05A8</connectedAppClientSecret>
+							 <connectedAppClientId>${connectedAppId}</connectedAppClientId>
+                <connectedAppClientSecret>${connectedAppSecret}</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
 							                <objectStoreV2>true</objectStoreV2>
 
