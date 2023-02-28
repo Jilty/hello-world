@@ -53,7 +53,7 @@
 							<project.version>1.0.0</project.version>
 							<mule.env>dev-in</mule.env>
 							<secure.key>mule</secure.key>
-							<orgId>${orgId}<ordId>
+							<orgId>${orgId}<orgId>
 							<connectedAppClientId>${connectedAppId}</connectedAppClientId>
                 <connectedAppClientSecret>${connectedAppSecret}</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
