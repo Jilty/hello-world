@@ -45,7 +45,7 @@
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<applicationName>hello-world-dev-in</applicationName>
+						<applicationName>hello-world-jilty-dev-in</applicationName>
 						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
