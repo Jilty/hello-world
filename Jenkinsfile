@@ -59,15 +59,15 @@ pipeline
 
    
  
-//   stage('Deploy application to cloudHub'){
-//    steps{
-//      scrtpt{
-//        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
-//        sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-dev-in -Dap.client_id=8c0ff4f9c24149269e6160339bd985b5  -Dap.client_secret=b6410B746D2647768747CA4c17eE64D3 -Dapp.runtime.server=4.4.0 -Ddeployment.env=dev-in  -Dsecure.key=mule -Dworkers=1 -DworkerType=null -Danypoint.businessGroup="NJC India"'
-//        }
-//      }
-//    }
-//   } 
+  stage('Deploy application to cloudHub'){
+   steps{
+     scrtpt{
+       configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
+       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-dev-in -Dap.client_id=8c0ff4f9c24149269e6160339bd985b5  -Dap.client_secret=b6410B746D2647768747CA4c17eE64D3 -Dapp.runtime.server=4.4.0 -Ddeployment.env=dev-in  -Dsecure.key=mule -Dworkers=1 -DworkerType=null -Danypoint.businessGroup="NJC India"'
+       }
+     }
+   }
+  } 
  
   }
  }
