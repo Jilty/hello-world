@@ -46,7 +46,7 @@
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<applicationName>hello-world-jilty-dev-in</applicationName>
-						<businessGroup>${anypoint.businessGroup}</businessGroup>
+						<businessGroup>NJC India</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
 							<http.port>8082</http.port>
