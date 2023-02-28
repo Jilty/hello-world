@@ -63,10 +63,8 @@ pipeline
    steps{
      script{
        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
-           sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-jilty-dev-in -Dap.client_id=ccb6a047babe4d7aab87d8f12251b78a  -Dap.client_secret=08839154734143C4Bf594830ec8e05A8 -Dapp.runtime.server=4.4.0 -Dmule.env=dev -Dsecure.key=mule -Dworkers=1 -Danypoint.businessGroup="NJC POC"'
+           sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-jilty-dev-in -Dap.client_id=ccb6a047babe4d7aab87d8f12251b78a  -Dap.client_secret=08839154734143C4Bf594830ec8e05A8 -Dapp.runtime.server=4.4.0 -Dmule.env=dev -Dsecure.key=mule -Dworkers=1 -Danypoint.businessGroup="NJC India"'
 
-//             sh 'mvn -f pom.xml -s $settings clean install -DskipTests'
-//             sh 'mvn -f pom.xml -s $settings clean deploy -DmuleDeploy'
        }
      }
    }
