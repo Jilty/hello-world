@@ -31,7 +31,7 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>3.5.4</version>
 				
 				<extensions>true</extensions>
 				<configuration>
@@ -43,7 +43,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
-						<applicationName>hello-world-jilty-dev-in</applicationName>
+						<applicationName>hello-world-jilty-2-dev-in</applicationName>
 						<businessGroup>NJC India</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
