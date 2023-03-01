@@ -52,14 +52,13 @@
 							<http.port>8082</http.port>
 							<project.version>1.0.0</project.version>
 							<mule.env>dev-in</mule.env>
-							<secure.key>mule</secure.key>
-							<connectedAppClientId>${connectedAppId}</connectedAppClientId>
+							<secure.key>mule</secure.key>		
+
+					</properties>
+						<connectedAppClientId>${connectedAppId}</connectedAppClientId>
                 <connectedAppClientSecret>${connectedAppSecret}</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
 							                <objectStoreV2>true</objectStoreV2>
-
-
-						</properties>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
