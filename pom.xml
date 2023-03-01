@@ -55,8 +55,8 @@
 							<secure.key>mule</secure.key>		
 
 					</properties>
-						<connectedAppClientId>${connectedAppId}</connectedAppClientId>
-                <connectedAppClientSecret>${connectedAppSecret}</connectedAppClientSecret>
+						<connectedAppClientId>${connApp.id}</connectedAppClientId>
+                <connectedAppClientSecret>${connApp.secret}</connectedAppClientSecret>
                 <connectedAppGrantType>client_credentials</connectedAppGrantType>
 							                <objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
