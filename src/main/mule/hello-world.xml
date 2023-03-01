@@ -7,6 +7,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6a12d36c-4b87-4685-93ad-5b7d59493011" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
+	 <configuration-properties doc:name="envConfigurationProperties" doc:id="ea05bcba-5ffe-4953-8cf2-d7702ee99a1f" file="properties/secure-dev.yaml" />
+
 	<flow name="hello-worldFlow" doc:id="f1549dd2-9a45-4bfe-91e6-73d11b64fd4a" >
 		<http:listener doc:name="Listener" doc:id="253941aa-7753-4b6f-beee-45f2ff3e4e76" config-ref="HTTP_Listener_config" path="/hello"/>
 		<set-payload value="Hello World" doc:name="Hello World" doc:id="6101f4cb-7c88-4cbd-9bbc-497752e90fb8" />
