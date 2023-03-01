@@ -25,7 +25,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>${mule.maven.plugin.version}</artifactId>
+				<artifactId>3.5.4</artifactId>
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
