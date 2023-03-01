@@ -6,7 +6,6 @@ def secrets = [
 ]
 def configuration = [vaultUrl: 'http://128.199.253.112:8200',  vaultCredentialId: 'vault-jenkins-id', engineVersion: 2]
 
-
 pipeline
 {
  agent any
