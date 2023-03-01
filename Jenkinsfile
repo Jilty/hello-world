@@ -57,7 +57,7 @@ pipeline
    steps{
      script{
        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
-       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -DconnectedAppId=$conAppId -DconnectedAppSecret=$conAppSecret -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
+       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -DconnApp.id=$conAppId -DconnApp.secret=$conAppSecret -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
        }
      }
    }
