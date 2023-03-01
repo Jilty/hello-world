@@ -52,6 +52,7 @@ pipeline
 // }
 //               }  
 //      }   
+   
  
   stage('Deploy application to cloudHub'){
    steps{
