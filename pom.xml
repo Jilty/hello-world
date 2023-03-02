@@ -51,12 +51,11 @@
 							<http.port>${http.port}</http.port>
 							<project.version>${project.version}</project.version>
 							<mule.env>${deployment.env}</mule.env>
-							<secure.key>${secure.key}</secure.key>	
-							<connectedAppClientId>${conAppId}</connectedAppClientId>
-							<connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>
+							<secure.key>${secure.key}</secure.key>								
 							<connectedAppGrantType>client_credentials</connectedAppGrantType>
-
-					</properties>
+						</properties>
+						<connectedAppClientId>${conAppId}</connectedAppClientId>
+						<connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>
 						
 					</cloudHubDeployment>
 				</configuration>
