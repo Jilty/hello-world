@@ -39,20 +39,19 @@
 					<cloudHubDeployment>
 						<server>cloudhub</server>
 						<environment>${deployment.env}</environment>
-						<region>us-east-2</region>
-						<muleVersion>4.4.0</muleVersion>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
-						<applicationName>hello-world-jilty-2-dev-in</applicationName>
+						<region>${region}</region>
+						<muleVersion>${app.runtime.server}</muleVersion>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
+						<applicationName>${applicationName}</applicationName>
 						<objectStoreV2>true</objectStoreV2>
-
-						<businessGroup>NJC India</businessGroup>
+						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
-							<http.port>8082</http.port>
-							<project.version>1.0.0</project.version>
+							<http.port>${http.port}</http.port>
+							<project.version>${project.version}</project.version>
 							<mule.env>${deployment.env}</mule.env>
-							<secure.key>mule</secure.key>	
+							<secure.key>${secure.key}</secure.key>	
 							<connectedAppClientId>${conAppId}</connectedAppClientId>
 							<connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>
 							<connectedAppGrantType>client_credentials</connectedAppGrantType>
