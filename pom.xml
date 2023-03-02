@@ -37,7 +37,7 @@
 				<configuration>
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>						
+						<server>cloudhub</server>
 						<environment>${deployment.env}</environment>
 						<region>${region}</region>
 						<muleVersion>${app.runtime.server}</muleVersion>
