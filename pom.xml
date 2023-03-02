@@ -38,27 +38,25 @@
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 						<server>cloudhub</server>
-						<environment>dev-in</environment>
+						<environment>${ap.environment}</environment>
 						<region>us-east-2</region>
-						<muleVersion>4.4.0</muleVersion>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
-						<applicationName>hello-world-jilty-2-dev-in</applicationName>
+						<muleVersion>${app.runtime.server}</muleVersion>
+						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
 						<objectStoreV2>true</objectStoreV2>
-
-						<businessGroup>NJC India</businessGroup>
+						<applicationName>${deployment.name}</applicationName>
+						<businessGroup>${anypoint.businessGroup}</businessGroup>
 						<deploymentTimeout>600000</deploymentTimeout>
 						<properties>
-							<http.port>8082</http.port>
-							<project.version>1.0.0</project.version>
-							<mule.env>dev-in</mule.env>
-							<secure.key>mule</secure.key>		
-
-					</properties>
-						<connectedAppClientId>${connectedAppClientId}</connectedAppClientId>
-                <connectedAppClientSecret>${connectedAppClientSecret}</connectedAppClientSecret>
-                <connectedAppGrantType>client_credentials</connectedAppGrantType>
-							                <objectStoreV2>true</objectStoreV2>
+						        <https.port>8082</https.port>	
+							<project.version>${project.version}</project.version>
+							<mule.env>${deployment.env}</mule.env>
+							<secure.key>${secure.key}</secure.key>
+							<anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+							<api.id>${api.id}</api.id>
+						</properties>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
