@@ -56,8 +56,8 @@
 
 
 						</properties>
-						<connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
-						<connectedAppClientSecret>08839154734143C4Bf594830ec8e05A8</connectedAppClientSecret>	
+						<connectedAppClientId>${conAppId}</connectedAppClientId>
+						<connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>	
 
 					</cloudHubDeployment>
 				</configuration>
