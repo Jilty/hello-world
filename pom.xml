@@ -52,11 +52,12 @@
 							<project.version>${project.version}</project.version>
 							<mule.env>${deployment.env}</mule.env>
 							<secure.key>${secure.key}</secure.key>	
+							<connectedAppGrantType>client_credentials</connectedAppGrantType>		
+
 
 						</properties>
 						<connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
 						<connectedAppClientSecret>08839154734143C4Bf594830ec8e05A8</connectedAppClientSecret>	
-						<connectedAppGrantType>client_credentials</connectedAppGrantType>		
 
 					</cloudHubDeployment>
 				</configuration>
