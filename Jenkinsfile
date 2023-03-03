@@ -58,8 +58,8 @@ pipeline
   stage('Deploy application to cloudHub'){
    steps{
      script{
-       configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
-//            sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -Dusername=jilty -Dpassword=Jilty@123 -DapplicationName=hello-world-jilty-dev-in -Dap.client_id=fda777bd3e3b4fcb93aff995fea2043d  -Dap.client_secret=4193AA1986054C548Bf757fd1B7F6f18 -Dapp.runtime.server=4.4.0 -Ddeployment.env=dev  -Dsecure.key=mule -Dworkers=1 -DworkerType=micro -Danypoint.businessGroup="NJC POC"'
+//        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
+        withVault([configuration: configuration, vaultSecrets: secrets]) {
 
        sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -DconnectedAppClientId=$conAppId -DconnectedAppClientSecret=$conAppSecret -Ddeployment.env=dev-in -Dregion=us-east-2 -Dapp.runtime.server=4.4.0 -Dsecure.key=$muleKey -Dworkers=1 -DworkerType=micro -Dhttp.port=8082 -Dproject.version=1.0.0 -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
        }
