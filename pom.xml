@@ -25,19 +25,20 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>3.5.4</artifactId>
+				<artifactId>${mule.maven.plugin.version}</artifactId>
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.5.4</version>
+				<version>3.8.0</version>
 				
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
-						<server>cloudhub</server>
+<!-- 						<server>cloudhub</server> -->
+						<uri>https://anypoint.mulesoft.com</uri>
 						<environment>${deployment.env}</environment>
 						<region>${region}</region>
 						<muleVersion>${app.runtime.server}</muleVersion>
@@ -52,10 +53,8 @@
 							<project.version>${project.version}</project.version>
 							<mule.env>${deployment.env}</mule.env>
 							<secure.key>${secure.key}</secure.key>	
-							<connectedAppGrantType>client_credentials</connectedAppGrantType>	
-
-
 						</properties>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>	
 						<connectedAppClientId>${conAppId}</connectedAppClientId>
 						<connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>	
 
