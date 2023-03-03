@@ -37,8 +37,8 @@
 				<configuration>
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
-<!-- 						<server>cloudhub</server> -->
-						<uri>https://anypoint.mulesoft.com</uri>
+						<server>cloudhub</server>
+<!-- 						<uri>https://anypoint.mulesoft.com</uri> -->
 						<environment>${deployment.env}</environment>
 						<region>${region}</region>
 						<muleVersion>${app.runtime.server}</muleVersion>
@@ -53,9 +53,9 @@
 							<project.version>${project.version}</project.version>
 							<mule.env>${deployment.env}</mule.env>
 							<secure.key>${secure.key}</secure.key>	
-							<connectedAppGrantType>client_credentials</connectedAppGrantType>
+<!-- 							<connectedAppGrantType>client_credentials</connectedAppGrantType>
 							<connectedAppClientId>${conAppId}</connectedAppClientId>
-						        <connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret>
+						        <connectedAppClientSecret>${conAppSecret}</connectedAppClientSecret> -->
 						</properties>
 						
 <!-- 						<connectedAppClientId>ccb6a047babe4d7aab87d8f12251b78a</connectedAppClientId>
