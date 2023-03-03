@@ -22,6 +22,7 @@ pipeline
       script{
          withVault([configuration: configuration, vaultSecrets: secrets]) {
             sh "echo $orgId"
+           sh "echo ${env.orgId}"
           } 
       }
    }
