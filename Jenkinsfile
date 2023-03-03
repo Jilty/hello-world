@@ -1,5 +1,5 @@
 def secrets = [
-  [path: 'secrets/secrets/bfsi', engineVersion: 2, secretValues: [
+  [path: 'secrets/bfsi', engineVersion: 2, secretValues: [
     [envVar: 'orgId', vaultKey: 'orgId'],
     [envVar: 'conAppId', vaultKey: 'conAppId'],
     [envVar: 'muleKey', vaultKey: 'muleKey'],
