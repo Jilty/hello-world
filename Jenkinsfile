@@ -61,7 +61,7 @@ pipeline
 //        configFileProvider([configFile(fileId: 'b0e08ae7-e5db-4166-956b-41ced22fd16e', variable: 'settings')]){
         withVault([configuration: configuration, vaultSecrets: secrets]) {
 
-       sh 'mvn -f pom.xml -s $settings deploy -DmuleDeploy -DskipTests -DconnectedAppClientId=$conAppId -DconnectedAppClientSecret=$conAppSecret -Ddeployment.env=dev-in -Dregion=us-east-2 -Dapp.runtime.server=4.4.0 -Dsecure.key=$muleKey -Dworkers=1 -DworkerType=micro -Dhttp.port=8082 -Dproject.version=1.0.0 -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
+       sh 'mvn -f pom.xml deploy -DmuleDeploy -DskipTests -DconnectedAppClientId=$conAppId -DconnectedAppClientSecret=$conAppSecret -Ddeployment.env=dev-in -Dregion=us-east-2 -Dapp.runtime.server=4.4.0 -Dsecure.key=$muleKey -Dworkers=1 -DworkerType=micro -Dhttp.port=8082 -Dproject.version=1.0.0 -DapplicationName=hello-world-jilty-dev-in -Danypoint.businessGroup="NJC India"'
        }
      }
    }
